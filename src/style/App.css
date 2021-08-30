@@ -1,0 +1,226 @@
+button {
+  cursor: pointer;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+button:hover {
+  background: #202020;
+  color: #b2b2b2;
+}
+
+.App {
+  background-color: #202020;
+  color: whitesmoke;
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  width: 615px;
+  height: 615px;
+}
+
+.box {
+  height: 190px;
+  width: 190px;
+  background-color: #b2b2b2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.box h1 {
+  position: absolute;
+  color: black;
+}
+
+.winner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  width: 30rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.winner h1 {
+  margin-bottom: 17%;
+  margin-top: 26%;
+  font-size: 5rem;
+}
+
+.winner button {
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-right: 3%;
+  font-size: 1.5rem;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  font-weight: bolder;
+}
+
+.score-container {
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.score-container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 3px solid #b2b2b2;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.game-mode {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game-mode h1 {
+  margin-bottom: 1rem;
+}
+
+.game-mode button {
+  border: none;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  width: 12rem;
+  background-color: whitesmoke;
+  border: 5px solid #202020;
+}
+
+.game-mode button:hover {
+  background: #202020;
+  color: #b2b2b2;
+}
+
+.game-mode .current-mode {
+  background-color: #202020;
+  color: #b2b2b2;
+  border: 5px solid #b2b2b2;
+}
+
+.player {
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.select-player {
+  background-color: #b2b2b2;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 25% / 50%;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+.select-player button {
+  height: 2rem;
+  width: 2rem;
+  border: 3px solid #202020;
+  border-radius: 50%;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+}
+
+.select-player button:hover {
+  background-color: whitesmoke;
+}
+/*# sourceMappingURL=App.css.map */

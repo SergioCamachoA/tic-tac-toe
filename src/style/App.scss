@@ -1,0 +1,151 @@
+button {
+  cursor: pointer;
+  transition: 300ms;
+  &:hover {
+    background: rgb(32, 32, 32);
+    color: rgb(178, 178, 178);
+  }
+}
+
+.App {
+  background-color: rgb(32, 32, 32);
+  color: whitesmoke;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 615px;
+  height: 615px;
+}
+
+.box {
+  height: 190px;
+  width: 190px;
+  background-color: rgb(178, 178, 178);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    position: absolute;
+    color: black;
+  }
+}
+.winner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  h1 {
+    margin-bottom: 17%;
+    margin-top: 26%;
+
+    font-size: 5rem;
+  }
+  button {
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin-right: 3%;
+    font-size: 1.5rem;
+    transition: 300ms;
+    font-weight: bolder;
+  }
+}
+
+.score-container {
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+  //   transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(178, 178, 178);
+    border-radius: 2rem;
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
+
+.game-mode {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    margin-bottom: 1rem;
+  }
+  button {
+    border: none;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    width: 12rem;
+    background-color: whitesmoke;
+    border: 5px solid rgb(32, 32, 32);
+
+    &:hover {
+      background: rgb(32, 32, 32);
+      color: rgb(178, 178, 178);
+    }
+  }
+
+  .current-mode {
+    background-color: rgb(32, 32, 32);
+    color: rgb(178, 178, 178);
+    border: 5px solid rgb(178, 178, 178);
+  }
+}
+
+.player {
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.select-player {
+  background-color: rgb(178, 178, 178);
+  width: 4rem;
+  height: 2rem;
+  border-radius: 25% / 50%;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  button {
+    height: 2rem;
+    width: 2rem;
+    border: 3px solid rgb(32, 32, 32);
+    border-radius: 50%;
+    transition: 400ms;
+    &:hover {
+      background-color: whitesmoke;
+    }
+  }
+}
