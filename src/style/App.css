@@ -9,11 +9,7 @@ button:hover {
   color: #b2b2b2;
 }
 
-.App {
-  background-color: #202020;
-  color: whitesmoke;
-  height: 100vh;
-  width: 100vw;
+.App, .box, .score-container, .score-container div, .game-mode, .player {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,6 +19,13 @@ button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.App {
+  background-color: #202020;
+  color: whitesmoke;
+  height: 100vh;
+  width: 100vw;
 }
 
 .grid {
@@ -40,15 +43,6 @@ button:hover {
   height: 190px;
   width: 190px;
   background-color: #b2b2b2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .box h1 {
@@ -63,19 +57,6 @@ button:hover {
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   width: 30rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   text-align: center;
 }
 
@@ -90,9 +71,9 @@ button:hover {
   border-radius: 2rem;
   padding: 1rem;
   margin-right: 3%;
-  font-size: 1.5rem;
   -webkit-transition: 300ms;
   transition: 300ms;
+  font-size: 1.5rem;
   font-weight: bolder;
 }
 
@@ -100,39 +81,25 @@ button:hover {
   position: absolute;
   left: 5%;
   bottom: 10%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .score-container div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   border: 3px solid #b2b2b2;
   border-radius: 2rem;
   padding: 1rem;
   margin: 1rem;
+}
+
+.score-container h2 {
+  display: none;
 }
 
 .game-mode {
@@ -141,35 +108,21 @@ button:hover {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.game-mode h1 {
-  margin-bottom: 1rem;
 }
 
 .game-mode button {
-  border: none;
+  width: 12rem;
+  border: 5px solid #202020;
+  border-radius: 2rem;
   margin: 1rem;
   padding: 1rem;
-  border-radius: 2rem;
   font-size: 1.2rem;
   font-weight: bolder;
-  width: 12rem;
   background-color: whitesmoke;
-  border: 5px solid #202020;
 }
 
 .game-mode button:hover {
@@ -187,19 +140,10 @@ button:hover {
   position: absolute;
   top: 10%;
   left: 3%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .select-player {
@@ -222,5 +166,80 @@ button:hover {
 
 .select-player button:hover {
   background-color: whitesmoke;
+}
+
+@media screen and (max-width: 1200px) {
+  .App {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  .grid-container {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  .score-container {
+    left: 0%;
+  }
+  .game-mode {
+    right: 0%;
+  }
+  .player {
+    left: 0%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .App {
+    height: 120vh;
+  }
+  .grid-container {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+  }
+  .score-container {
+    width: 100vw;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    left: 0%;
+    bottom: 15%;
+  }
+  .score-container h1 {
+    display: none;
+  }
+  .score-container h2 {
+    display: block;
+  }
+  .score-container div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .score {
+    margin-left: 7px;
+  }
+  .game-mode {
+    width: 100vw;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    right: 0%;
+    top: 10%;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  .player {
+    width: 100vw;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    top: -3%;
+  }
 }
 /*# sourceMappingURL=App.css.map */

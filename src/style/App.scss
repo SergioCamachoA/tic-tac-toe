@@ -7,14 +7,18 @@ button {
   }
 }
 
+%centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .App {
   background-color: rgb(32, 32, 32);
   color: whitesmoke;
   height: 100vh;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %centered;
 }
 
 .grid {
@@ -29,9 +33,8 @@ button {
   height: 190px;
   width: 190px;
   background-color: rgb(178, 178, 178);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %centered;
+
   h1 {
     position: absolute;
     color: black;
@@ -43,25 +46,28 @@ button {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   width: 30rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  // @extend %centered;
+  // flex-direction: column;
   text-align: center;
   h1 {
-    margin-bottom: 17%;
-    margin-top: 26%;
+    margin: {
+      bottom: 17%;
+      top: 26%;
+    }
 
     font-size: 5rem;
   }
   button {
-    border: none;
-    border-radius: 2rem;
+    border: none {
+      radius: 2rem;
+    }
     padding: 1rem;
     margin-right: 3%;
-    font-size: 1.5rem;
     transition: 300ms;
-    font-weight: bolder;
+    font: {
+      size: 1.5rem;
+      weight: bolder;
+    }
   }
 }
 
@@ -69,20 +75,19 @@ button {
   position: absolute;
   left: 5%;
   bottom: 10%;
-  //   transform: translateY(-50%);
-  display: flex;
+  @extend %centered;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   div {
-    display: flex;
+    @extend %centered;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid rgb(178, 178, 178);
-    border-radius: 2rem;
+    border: 3px solid rgb(178, 178, 178) {
+      radius: 2rem;
+    }
     padding: 1rem;
     margin: 1rem;
+  }
+  h2 {
+    display: none;
   }
 }
 
@@ -91,23 +96,20 @@ button {
   right: 5%;
   top: 50%;
   transform: translateY(-50%);
-  display: flex;
+  @extend %centered;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  h1 {
-    margin-bottom: 1rem;
-  }
   button {
-    border: none;
+    width: 12rem;
+    border: 5px solid rgb(32, 32, 32) {
+      radius: 2rem;
+    }
     margin: 1rem;
     padding: 1rem;
-    border-radius: 2rem;
-    font-size: 1.2rem;
-    font-weight: bolder;
-    width: 12rem;
+    font: {
+      size: 1.2rem;
+      weight: bolder;
+    }
     background-color: whitesmoke;
-    border: 5px solid rgb(32, 32, 32);
 
     &:hover {
       background: rgb(32, 32, 32);
@@ -126,10 +128,8 @@ button {
   position: absolute;
   top: 10%;
   left: 3%;
-  display: flex;
+  @extend %centered;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .select-player {
   background-color: rgb(178, 178, 178);
@@ -141,11 +141,75 @@ button {
   button {
     height: 2rem;
     width: 2rem;
-    border: 3px solid rgb(32, 32, 32);
-    border-radius: 50%;
+    border: 3px solid rgb(32, 32, 32) {
+      radius: 50%;
+    }
     transition: 400ms;
     &:hover {
       background-color: whitesmoke;
     }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .App {
+    transform: scale(0.9);
+  }
+
+  .grid-container {
+    transform: scale(0.7);
+  }
+
+  .score-container {
+    left: 0%;
+  }
+
+  .game-mode {
+    right: 0%;
+  }
+
+  .player {
+    left: 0%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .App {
+    height: 120vh;
+  }
+  .grid-container {
+    transform: scale(0.6);
+  }
+  .score-container {
+    width: 100vw;
+    flex-direction: row;
+    justify-content: space-between;
+    left: 0%;
+    bottom: 15%;
+    h1 {
+      display: none;
+    }
+    h2 {
+      display: block;
+    }
+    div {
+      flex-direction: row;
+    }
+  }
+  .score {
+    margin-left: 7px;
+  }
+  .game-mode {
+    width: 100vw;
+    flex-direction: row;
+    right: 0%;
+    top: 10%;
+    transform: translateY(0%);
+  }
+  .player {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -3%;
   }
 }

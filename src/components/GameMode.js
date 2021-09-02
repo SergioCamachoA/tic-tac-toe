@@ -10,18 +10,17 @@ export const GameMode = () => {
 
   return (
     <div className="game-mode">
-      <h1> play against</h1>
       <button
         onClick={() => handleOpponent(true)}
         className={`${isFriend && "current-mode"}`}
       >
-        a friend
+        vs friend
       </button>
       <button
         onClick={() => handleOpponent(false)}
         className={`${!isFriend && "current-mode"}`}
       >
-        the computer
+        vs computer
       </button>
     </div>
   )
