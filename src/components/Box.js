@@ -4,6 +4,7 @@ import circle from "../media/circle.png"
 import { useGlobal } from "../context/useGlobal"
 
 export const Box = ({
+  hasRef,
   id,
   isCross,
   setIsCross,
@@ -12,10 +13,9 @@ export const Box = ({
   playerTwo,
   setPlayerTwo,
   restart,
-  hasRef,
-  winner,
+  // winner,
 }) => {
-  const { startsPlayerOne } = useGlobal()
+  const { startsPlayerOne, winner } = useGlobal()
   const [isClicked, setIsClicked] = useState(false)
   const [crossTurn, setCrossTurn] = useState(true)
 

@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState } from "react"
-// import { useOpponent } from "../hooks/useOpponent"
 
 export const GlobalContext = createContext()
 
@@ -10,6 +9,22 @@ export const GlobalContextProvider = ({ children }) => {
   const [ableToSelect, setAbleToSelect] = useState(true)
 
   const [isFriend, setIsFriend] = useState(true)
+
+  const [winner, setWinner] = useState(null)
+
+  const initialBoxProperties = [
+    { id: 0 },
+    { id: 1 },
+    { id: 2 },
+    { id: 3 },
+    { id: 4 },
+    { id: 5 },
+    { id: 6 },
+    { id: 7 },
+    { id: 8 },
+  ]
+
+  const [boxProperties, setBoxProperties] = useState(initialBoxProperties)
 
   const values = {
     scorePlayerOne,
@@ -22,6 +37,11 @@ export const GlobalContextProvider = ({ children }) => {
     setAbleToSelect,
     isFriend,
     setIsFriend,
+    winner,
+    setWinner,
+    initialBoxProperties,
+    boxProperties,
+    setBoxProperties,
   }
   return (
     <GlobalContext.Provider value={values}>{children}</GlobalContext.Provider>
