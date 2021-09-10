@@ -8,7 +8,7 @@ export const GlobalContextProvider = ({ children }) => {
   const [startsPlayerOne, setStartsPlayerOne] = useState(true)
   const [ableToSelect, setAbleToSelect] = useState(true)
 
-  const [isFriend, setIsFriend] = useState(true)
+  const [isFriend, setIsFriend] = useState(false)
 
   const [winner, setWinner] = useState(null)
 
@@ -26,6 +26,8 @@ export const GlobalContextProvider = ({ children }) => {
 
   const [boxProperties, setBoxProperties] = useState(initialBoxProperties)
 
+  const [blockedOpponent, setBlockedOpponent] = useState(null)
+
   const values = {
     scorePlayerOne,
     setScorePlayerOne,
@@ -42,6 +44,8 @@ export const GlobalContextProvider = ({ children }) => {
     initialBoxProperties,
     boxProperties,
     setBoxProperties,
+    blockedOpponent,
+    setBlockedOpponent,
   }
   return (
     <GlobalContext.Provider value={values}>{children}</GlobalContext.Provider>

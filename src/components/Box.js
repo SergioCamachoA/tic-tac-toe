@@ -13,15 +13,12 @@ export const Box = ({
   playerTwo,
   setPlayerTwo,
   restart,
-  // winner,
 }) => {
-  const { startsPlayerOne, winner } = useGlobal()
+  const { startsPlayerOne, winner, setBlockedOpponent } = useGlobal()
   const [isClicked, setIsClicked] = useState(false)
   const [crossTurn, setCrossTurn] = useState(true)
 
   const autofill = useRef(null)
-
-  //   console.log(ref)
 
   const clickHandler = (e) => {
     if (Number(e.target.id) === id) {
@@ -49,11 +46,17 @@ export const Box = ({
       autofill.current = null
     } else {
       if (autofill.current !== null) {
+        setBlockedOpponent(true)
         setTimeout(() => {
           autofill.current.click()
-        }, 900)
+        }, 500)
+        setTimeout(() => {
+          setBlockedOpponent(null)
+        }, 1000)
       }
     }
+
+    // eslint-disable-next-line
   }, [hasRef, winner])
 
   return (

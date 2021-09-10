@@ -5,7 +5,8 @@ import { useWinner } from "../hooks/useWinner"
 import { Box } from "./Box"
 
 export const Grid = () => {
-  const { winner, setWinner, boxProperties, startsPlayerOne } = useGlobal()
+  const { winner, setWinner, boxProperties, startsPlayerOne, isFriend } =
+    useGlobal()
 
   const { handleOpponent } = useOpponent()
 
@@ -24,7 +25,7 @@ export const Grid = () => {
   useEffect(() => {
     handleOpponent(playerOne, playerTwo, isCrossTurn)
     // eslint-disable-next-line
-  }, [playerOne, playerTwo, isCrossTurn, startsPlayerOne])
+  }, [playerOne, playerTwo, isCrossTurn, startsPlayerOne, isFriend])
 
   const [restart, setRestart] = useState(false)
 
@@ -55,7 +56,6 @@ export const Grid = () => {
               playerTwo={playerTwo}
               setPlayerTwo={setPlayerTwo}
               restart={restart}
-              // winner={winner}
             />
           )
         })}
