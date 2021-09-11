@@ -53,10 +53,16 @@ export const useMatchPoint = () => {
         if (!secondRun) {
           return handleMatchPoint(playerOne, playerTwo, true)
         } else {
-          if (playerOne.length === 2) {
+          if (
+            playerOne.length === 2 &&
+            playerOne[0] % 2 === 0 &&
+            playerOne[1] % 2 === 0
+          ) {
+            // if (playerOne[0] % 2 === 0 && playerOne[1] % 2 === 0) {
             const starters = [1, 3, 5, 7]
             const chosenStarter = Math.floor(Math.random() * 4)
             return (chosenBox = starters[chosenStarter])
+            // }
           }
           return (chosenBox = Math.floor(Math.random() * 9))
         }

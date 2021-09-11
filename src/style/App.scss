@@ -49,6 +49,13 @@ button {
   // @extend %centered;
   // flex-direction: column;
   text-align: center;
+  cursor: pointer;
+  &:hover {
+    button {
+      background: rgb(32, 32, 32);
+      color: rgb(178, 178, 178);
+    }
+  }
   h1 {
     margin: {
       bottom: 17%;
@@ -65,7 +72,7 @@ button {
     margin-right: 3%;
     transition: 300ms;
     font: {
-      size: 1.5rem;
+      size: 2.7rem;
       weight: bolder;
     }
   }

@@ -61,9 +61,9 @@ export const Grid = () => {
         })}
       </div>
       {winner && (
-        <div className="winner">
+        <div onClick={() => handleRestart()} className="winner">
           <h1 className="winner-h1">{winner}</h1>
-          <button onClick={() => handleRestart()}>restart game</button>
+          <button>restart game</button>
         </div>
       )}
     </div>

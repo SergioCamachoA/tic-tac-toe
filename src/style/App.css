@@ -58,6 +58,12 @@ button:hover {
           transform: translateX(-50%) translateY(-50%);
   width: 30rem;
   text-align: center;
+  cursor: pointer;
+}
+
+.winner:hover button {
+  background: #202020;
+  color: #b2b2b2;
 }
 
 .winner h1 {
@@ -73,7 +79,7 @@ button:hover {
   margin-right: 3%;
   -webkit-transition: 300ms;
   transition: 300ms;
-  font-size: 1.5rem;
+  font-size: 2.7rem;
   font-weight: bolder;
 }
 
