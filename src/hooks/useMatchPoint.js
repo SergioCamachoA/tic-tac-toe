@@ -15,19 +15,13 @@ export const useMatchPoint = () => {
 
   const { startsPlayerOne } = useGlobal()
 
-  const handleMatchPoint = (playerTwo, playerOne, counter = 0) => {
-    // const handleMatchPoint = (playerOne, playerTwo) => {
-    console.log("p1", playerOne)
-    console.log("p2", playerTwo)
-    console.log(counter)
-
+  const handleMatchPoint = (playerTwo, playerOne, secondRun = false) => {
     let validations = []
     let possibilities = []
 
     let chosenBox = null
 
-    if (counter === 0 ? playerTwo.length >= 2 : playerOne.length >= 2) {
-      // const handleTurn = (playerOne, playerTwo) => {
+    if (playerTwo.length >= 2 || playerOne.length >= 2) {
       for (const winEl of toWin) {
         for (const playerEl of playerOne) {
           if (winEl.includes(playerEl)) {
@@ -42,42 +36,38 @@ export const useMatchPoint = () => {
         }
       }
 
-      //   console.log(possibilities)
-
       let checkPossibilities = [...possibilities]
 
       for (const possibleEl of checkPossibilities) {
         for (const playedEl of playerTwo) {
-          //   console.log(playedEl)
-          //   console.log(possibleEl)
           if (possibleEl.includes(playedEl)) {
             const index = possibilities.indexOf(possibleEl)
             possibilities.splice(index, 1)
           }
         }
       }
-      //   console.log(possibilities)
 
       if (possibilities.length === 0) {
-        console.log("no possibilities")
+        // console.log("no possibilities")
 
-        if (counter === 0) {
-          return handleMatchPoint(playerOne, playerTwo, 1)
+        if (!secondRun) {
+          return handleMatchPoint(playerOne, playerTwo, true)
         } else {
-          // chosenBox = Math.floor(Math.random() * 9)
-          const starters = [1, 3, 5, 7]
-          const chosenStarter = Math.floor(Math.random() * 4)
-          return (chosenBox = starters[chosenStarter])
+          if (playerOne.length === 2) {
+            const starters = [1, 3, 5, 7]
+            const chosenStarter = Math.floor(Math.random() * 4)
+            return (chosenBox = starters[chosenStarter])
+          }
+          return (chosenBox = Math.floor(Math.random() * 9))
         }
-        // return randomBox
       } else if (possibilities.length === 1) {
-        console.log("one possibility")
+        // console.log("one possibility")
         for (const playedBox of playerOne) {
           possibilities[0] = possibilities[0].filter((el) => el !== playedBox)
         }
         chosenBox = possibilities[0][0]
       } else {
-        console.log("different possibilities")
+        // console.log("different possibilities")
         const randomPossibility = Math.floor(
           Math.random() * possibilities.length
         )
@@ -88,8 +78,6 @@ export const useMatchPoint = () => {
         }
         chosenBox = possibilities[randomPossibility][0]
       }
-      // }
-      // handleTurn(one, two)
     } else {
       if (startsPlayerOne && !playerTwo.includes(4)) {
         return (chosenBox = 4)
@@ -98,16 +86,6 @@ export const useMatchPoint = () => {
         const chosenStarter = Math.floor(Math.random() * 4)
         return (chosenBox = starters[chosenStarter])
       }
-      // if (startsPlayerOne && !playerTwo.includes(4)) {
-      //   if (!playerTwo.includes(4)) {
-      //     return (chosenBox = 4)
-      //   }
-      //   return (chosenBox = Math.floor(Math.random() * 9))
-      // } else {
-      //   const starters = [0, 2, 6, 8]
-      //   const chosenStarter = Math.floor(Math.random() * 4)
-      //   return (chosenBox = starters[chosenStarter])
-      // }
     }
     return chosenBox
   }
