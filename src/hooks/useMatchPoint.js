@@ -64,7 +64,10 @@ export const useMatchPoint = () => {
         if (counter === 0) {
           return handleMatchPoint(playerOne, playerTwo, 1)
         } else {
-          chosenBox = Math.floor(Math.random() * 9)
+          // chosenBox = Math.floor(Math.random() * 9)
+          const starters = [1, 3, 5, 7]
+          const chosenStarter = Math.floor(Math.random() * 4)
+          return (chosenBox = starters[chosenStarter])
         }
         // return randomBox
       } else if (possibilities.length === 1) {
@@ -88,16 +91,23 @@ export const useMatchPoint = () => {
       // }
       // handleTurn(one, two)
     } else {
-      if (startsPlayerOne) {
-        if (!playerTwo.includes(4)) {
-          return (chosenBox = 4)
-        }
-        return (chosenBox = Math.floor(Math.random() * 9))
+      if (startsPlayerOne && !playerTwo.includes(4)) {
+        return (chosenBox = 4)
       } else {
         const starters = [0, 2, 6, 8]
         const chosenStarter = Math.floor(Math.random() * 4)
         return (chosenBox = starters[chosenStarter])
       }
+      // if (startsPlayerOne && !playerTwo.includes(4)) {
+      //   if (!playerTwo.includes(4)) {
+      //     return (chosenBox = 4)
+      //   }
+      //   return (chosenBox = Math.floor(Math.random() * 9))
+      // } else {
+      //   const starters = [0, 2, 6, 8]
+      //   const chosenStarter = Math.floor(Math.random() * 4)
+      //   return (chosenBox = starters[chosenStarter])
+      // }
     }
     return chosenBox
   }
