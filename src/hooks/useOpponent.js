@@ -13,6 +13,7 @@ export const useOpponent = () => {
       if (startsPlayerOne ? !isCrossTurn : isCrossTurn) {
         const currentBox = handleMatchPoint(playerOne, playerTwo)
         if (playerOne.includes(currentBox) || playerTwo.includes(currentBox)) {
+          // console.log("recursion took place")
           return handleOpponent(playerOne, playerTwo, isCrossTurn)
         } else {
           let currentComputerTurn = [...initialBoxProperties]
