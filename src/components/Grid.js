@@ -5,8 +5,15 @@ import { useWinner } from "../hooks/useWinner"
 import { Box } from "./Box"
 
 export const Grid = () => {
-  const { winner, setWinner, boxProperties, startsPlayerOne, isFriend } =
-    useGlobal()
+  const {
+    winner,
+    setWinner,
+    boxProperties,
+    startsPlayerOne,
+    isFriend,
+    setBoxProperties,
+    initialBoxProperties,
+  } = useGlobal()
 
   const { handleOpponent } = useOpponent()
 
@@ -35,6 +42,7 @@ export const Grid = () => {
     setPlayerTwo([])
     setPlayerOne([])
     setRestart(!restart)
+    setBoxProperties(initialBoxProperties)
   }
 
   return (
