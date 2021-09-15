@@ -44,6 +44,7 @@ export const Grid = () => {
         style={winner && { opacity: "0.3", pointerEvents: "none" }}
       >
         {boxProperties.map(({ id, hasRef }) => {
+          // console.log(hasRef)
           return (
             <Box
               hasRef={hasRef}

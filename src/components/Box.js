@@ -14,7 +14,13 @@ export const Box = ({
   setPlayerTwo,
   restart,
 }) => {
-  const { startsPlayerOne, winner, setBlockedOpponent } = useGlobal()
+  const {
+    startsPlayerOne,
+    winner,
+    setBlockedOpponent,
+    setBoxProperties,
+    initialBoxProperties,
+  } = useGlobal()
   const [isClicked, setIsClicked] = useState(false)
   const [crossTurn, setCrossTurn] = useState(true)
 
@@ -43,7 +49,8 @@ export const Box = ({
 
   useEffect(() => {
     if (winner) {
-      autofill.current = null
+      // autofill.current = null
+      setBoxProperties(initialBoxProperties)
     } else {
       if (autofill.current !== null) {
         setBlockedOpponent(true)
